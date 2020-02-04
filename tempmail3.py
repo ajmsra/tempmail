@@ -1,26 +1,22 @@
+import requests
 import string
 import random
-from hashlib import md5
-
-import requests
+import hashlib
 
 
 class TempMail(object):
     """
-    API Wrapper for service which provides temporary email address.
-
     :param login: (optional) login for email address.
     :param domain: (optional) domain (from current available)
     for email address.
     :param api_domain: (optional) domain for temp-mail api.
-    Default value is ``privatix-temp-mail-v1.p.mashape.com``.
+    Default value is ``privatix-temp-mail-v1.p.rapidapi.com``.
     """
-
-    def __init__(self, api_key, login=None, domain=None, api_domain='privatix-temp-mail-v1.p.mashape.com'):
+    def __init__(self, api_key, login = None, domain = None, api_domain = 'privatix-temp-mail-v1.p.rapidapi.com'):
+        self.api_key = api_key
         self.login = login
         self.domain = domain
         self.api_domain = api_domain
-        self.api_key = api_key
 
     def __repr__(self):
         return u'<TempMail [{0}]>'.format(self.get_email_address())
@@ -34,8 +30,8 @@ class TempMail(object):
             url = 'https://{0}/request/domains/format/json/'.format(
                 self.api_domain)
             req = requests.get(url, headers={
-                "X-Mashape-Key": self.api_key,
-                "Accept": "application/json"
+                'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+                'x-rapidapi-key': self.api_key
             })
             domains = req.json()
             setattr(self, '_available_domains', domains)
@@ -45,7 +41,6 @@ class TempMail(object):
         """
         Generate string for email address login with defined length and
         alphabet.
-
         :param min_length: (optional) min login length.
         Default value is ``6``.
         :param max_length: (optional) max login length.
@@ -77,16 +72,14 @@ class TempMail(object):
     def get_hash(self, email):
         """
         Return md5 hash for given email address.
-
         :param email: email address for generate md5 hash.
         """
-        return md5(email.encode('utf-8')).hexdigest()
+        return hashlib.md5(email.encode('utf-8')).hexdigest()
 
     def get_mailbox(self, email=None, email_hash=None):
         """
         Return list of emails in given email address
         or dict with `error` key if mail box is empty.
-
         :param email: (optional) email address.
         :param email_hash: (optional) md5 hash from email address.
         """
@@ -98,15 +91,14 @@ class TempMail(object):
         url = 'https://{0}/request/mail/id/{1}/format/json/'.format(
             self.api_domain, email_hash)
         req = requests.get(url, headers={
-            "X-Mashape-Key": self.api_key,
-            "Accept": "application/json"
+            'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+            'x-rapidapi-key': self.api_key
         })
         return req.json()
-    
+
     def delete_email(self, email, email_hash=None):
         """
         Delete a given email in a given email address
-
         :param email: (optional) email address.
         :param email_hash: (optional) md5 hash from email address.
         """
@@ -117,15 +109,14 @@ class TempMail(object):
             self.api_domain, email_hash)
 
         req = requests.get(url, headers={
-            "X-Mashape-Key": self.api_key,
-            "Accept": "application/json"
+            'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+            'x-rapidapi-key': self.api_key
         })
         return req.json()
 
     def get_attachments(self, email, email_hash=None):
         """
         Get attachments of a given email in a given email address
-
         :param email: (optional) email address.
         :param email_hash: (optional) md5 hash from email address.
         """
@@ -136,15 +127,14 @@ class TempMail(object):
             self.api_domain, email_hash)
 
         req = requests.get(url, headers={
-            "X-Mashape-Key": self.api_key,
-            "Accept": "application/json"
+            'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+            'x-rapidapi-key': self.api_key
         })
         return req.json()
 
     def get_message(self, email, email_hash=None):
         """
         Get a given email in a given email address
-
         :param email: (optional) email address.
         :param email_hash: (optional) md5 hash from email address.
         """
@@ -155,16 +145,14 @@ class TempMail(object):
             self.api_domain, email_hash)
 
         req = requests.get(url, headers={
-            "X-Mashape-Key": self.api_key,
-            "Accept": "application/json"
+            'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+            'x-rapidapi-key': self.api_key
         })
         return req.json()
 
-    
     def source_message(self, email, email_hash=None):
         """
         Source a given email in a given email address
-
         :param email: (optional) email address.
         :param email_hash: (optional) md5 hash from email address.
         """
@@ -175,7 +163,7 @@ class TempMail(object):
             self.api_domain, email_hash)
 
         req = requests.get(url, headers={
-            "X-Mashape-Key": self.api_key,
-            "Accept": "application/json"
+            'x-rapidapi-host': 'privatix-temp-mail-v1.p.rapidapi.com',
+            'x-rapidapi-key': self.api_key
         })
         return req.json()
