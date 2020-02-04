@@ -1,7 +1,7 @@
 Tempmail2
 =========
 
-Python API Wrapper version 2 for `temp-mail.org <https://temp-mail.org/>`_ service. Temp-mail.org is a service which lets you use anonymous emails for free. You can view full API specification in `api.temp-mail.org <http://api.temp-mail.org/>`_.
+Python API Wrapper version 2 for `temp-mail.org <https://temp-mail.org/>`_ service. Temp-mail.org is a service which lets you use anonymous emails for free. You can view full API specification in `api.temp-mail.org <https://rapidapi.com/Privatix/api/temp-mail>`_.
 
 Requirements
 ------------
@@ -12,19 +12,12 @@ You can install it through ::
 
  $ pip install requests
 
-Installation
-------------
-
-Installing with pip::
-
-    $ pip install tempMail2
-
 Usage
 -----
 
-Before you can use this, you need to get api key from https://market.mashape.com/Privatix/temp-mail.
+Before you can use this, you need to get api key from https://rapidapi.com/Privatix/api/temp-mail.
 
-So create an account on Mashape and get the Mashape Api Key
+So create an account on Rapidapi and get the Rapidapi Api Key
 
 Get all emails from given email login and domain::
 
