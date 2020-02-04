@@ -10,22 +10,22 @@ long_description = read('README.rst')
 
 
 setup(
-    name='tempMail2',
-    version='1.0.3',
+    name='tempMail3',
+    version='1.0.4',
     license='MIT',
     description='Python wrapper for online service which provides '
-                'temporary email address: https://temp-mail.org/ V2',
+                'temporary email address: https://temp-mail.org/ V3',
     long_description= long_description,
     keywords='temporary temp mail email address wrapper api anon '
              'anonymous secure free disposable',
-    url='https://github.com/CITGuru/tempmail',
-    author='Oyetoke Toby',
-    author_email='oyetoketoby80@gmail.com',
+    url='https://github.com/cvasilivg/tempmail',
+    author='Carlos Vasili',
+    author_email='c.vasili@hotmail.com',
     include_package_data=True,
     packages=find_packages(),
     install_requires=['requests'],
-    download_url='https://github.com/CITGuru/tempmail/archive/1.0.0.tar.gz',
-    py_modules=['tempMail2'],
+    download_url='https://github.com/cvasilivg/tempmail/archive/1.0.0.tar.gz',
+    py_modules=['tempMail3'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
