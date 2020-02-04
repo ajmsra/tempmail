@@ -21,14 +21,14 @@ So create an account on Rapidapi and get the Rapidapi Api Key
 
 Get all emails from given email login and domain::
 
-    from tempMail2 import TempMail
+    from tempMail3 import TempMail
 
     tm = TempMail(api_key='apikey', login='denis', domain='@gnail.pw')
     print tm.get_mailbox()  # list of emails in denis@gnail.pw
 
 Generate email address and get emails from it::
 
-    from tempMail2 import TempMail
+    from tempMail3 import TempMail
 
     tm = TempMail(api_key='apikey')
     email = tm.get_email_address()  # v5gwnrnk7f@gnail.pw
