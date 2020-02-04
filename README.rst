@@ -1,7 +1,7 @@
-Tempmail2
+Tempmail3
 =========
 
-Python API Wrapper version 2 for `temp-mail.org <https://temp-mail.org/>`_ service. Temp-mail.org is a service which lets you use anonymous emails for free. You can view full API specification in `api.temp-mail.org <https://rapidapi.com/Privatix/api/temp-mail>`_.
+Python API Wrapper version 3 for `temp-mail.org <https://temp-mail.org/>`_ service. Temp-mail.org is a service which lets you use anonymous emails for free. You can view full API specification in `api.temp-mail.org <https://rapidapi.com/Privatix/api/temp-mail>`_.
 
 Requirements
 ------------
