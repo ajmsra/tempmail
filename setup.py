@@ -24,7 +24,7 @@ setup(
     include_package_data=True,
     packages=find_packages(),
     install_requires=['requests'],
-    download_url='https://github.com/cvasilivg/tempmail/archive/1.0.0.tar.gz',
+    download_url='https://github.com/cvasilivg/tempmail/archive/1.0.4.tar.gz',
     py_modules=['tempMail3'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
